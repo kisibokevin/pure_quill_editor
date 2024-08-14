@@ -1,11 +1,9 @@
 'use client';
-import React, { forwardRef, useEffect, useLayoutEffect, useRef } from "react";
+import React, { forwardRef, useLayoutEffect, useRef } from "react";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
-
-
 
 const toolbarOptions = [
 	["bold", "italic", "underline", "strike"],
@@ -24,9 +22,7 @@ const toolbarOptions = [
 	["clean"],
 ];
 
-
 // Editor is an uncontrolled React component
-
 const QuillEditor = forwardRef(({ readOnly, defaultValue="", onTextChange, onSelectionChange }, ref) => {
 
     const containerRef = useRef(null);
@@ -79,6 +75,7 @@ const QuillEditor = forwardRef(({ readOnly, defaultValue="", onTextChange, onSel
 		return () => {
 			container.innerHTML = "";
 		};
+
     }, [readOnly, defaultValue, onTextChange, onSelectionChange, ref]);
 
     return <div ref={containerRef}></div>;
